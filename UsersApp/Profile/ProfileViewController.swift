@@ -59,12 +59,20 @@ class ProfileViewController: UIViewController {
         viewModel.userDetails.name = userNameTextField.text ?? ""
         viewModel.userDetails.age = Int16(ageTextField.text ?? "") ?? 0
         viewModel.userDetails.gender = genderTextField.text ?? ""
-        //viewModel.userDetails.picture = profileImageView.text
+        viewModel.userDetails.pictureData = profileImageView.image?.pngData()
         viewModel.saveUserDetails()
+        homeViewController()
     }
     
     @IBAction func pickProfilePhotoButtonAction(_ sender: UIButton) {
         imagePicker.present(from: sender)
+    }
+    
+    // navigation
+    private func homeViewController() {
+        if let home = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(identifier: "aHomeViewController") as? HomeViewController {
+            navigationController?.pushViewController(home, animated: true)
+        }
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {

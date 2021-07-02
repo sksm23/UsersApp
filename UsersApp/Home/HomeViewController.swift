@@ -19,9 +19,11 @@ class HomeViewController: UIViewController {
         viewModel.fetchUserList()
         viewModel.getLikedProfileList()
         bindViewModel()
+        prepareUI()
     }
     
     private func prepareUI() {
+        navigationItem.hidesBackButton = true
     }
     
     //MARK: - Bind
@@ -38,6 +40,17 @@ class HomeViewController: UIViewController {
     @IBAction func segmentedControlAction(_ sender: UISegmentedControl) {
         viewModel.segregateUsersWith(index: sender.selectedSegmentIndex)
         tableView.reloadData()
+    }
+    
+    @IBAction func profileBarButtonAction(_ sender: UIBarButtonItem) {
+        profileViewController()
+    }
+    
+    // navigation
+    private func profileViewController() {
+        if let profile = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(identifier: "aProfileViewController") as? ProfileViewController {
+            navigationController?.pushViewController(profile, animated: true)
+        }
     }
 }
 

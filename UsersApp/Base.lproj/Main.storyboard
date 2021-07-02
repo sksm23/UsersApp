@@ -13,18 +13,18 @@
             <objects>
                 <viewController storyboardIdentifier="aProfileViewController" id="BYZ-38-t0r" customClass="ProfileViewController" customModule="UsersApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profile_placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="aWA-uE-8xV">
-                                <rect key="frame" x="157" y="106" width="100" height="100"/>
+                                <rect key="frame" x="157" y="138" width="100" height="100"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="100" id="0Sz-mN-Uft"/>
                                     <constraint firstAttribute="height" constant="100" id="il6-Vl-xt3"/>
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wgK-bV-VD6">
-                                <rect key="frame" x="227" y="176" width="30" height="30"/>
+                                <rect key="frame" x="227" y="208" width="30" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="30" id="SJg-Ep-rtm"/>
                                     <constraint firstAttribute="height" constant="30" id="pFT-qk-cZG"/>
@@ -36,7 +36,7 @@
                                 </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" placeholder="Age" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="plg-8o-Cff">
-                                <rect key="frame" x="25" y="376" width="364" height="45"/>
+                                <rect key="frame" x="25" y="408" width="364" height="45"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="45" id="Vce-ca-XiZ"/>
                                 </constraints>
@@ -47,7 +47,7 @@
                                 </connections>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" placeholder="Gender" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kzR-pA-hUb">
-                                <rect key="frame" x="25" y="306" width="364" height="45"/>
+                                <rect key="frame" x="25" y="338" width="364" height="45"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="45" id="MyQ-Il-qP3"/>
                                 </constraints>
@@ -58,7 +58,7 @@
                                 </connections>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" placeholder="Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ybk-YA-1LH">
-                                <rect key="frame" x="25" y="236" width="364" height="45"/>
+                                <rect key="frame" x="25" y="268" width="364" height="45"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="45" id="vTW-Pa-LO7"/>
                                 </constraints>
@@ -69,7 +69,7 @@
                                 </connections>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5gc-7e-haG">
-                                <rect key="frame" x="132" y="521" width="150" height="50"/>
+                                <rect key="frame" x="132" y="553" width="150" height="50"/>
                                 <color key="backgroundColor" red="0.0" green="0.66666666669999997" blue="0.3921568627" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="anB-tT-eTy"/>
@@ -87,7 +87,6 @@
                                 </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="saveButtonAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="dVm-XA-tR0"/>
-                                    <segue destination="iJb-Lv-YQY" kind="show" id="C6J-dz-JTn"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -129,11 +128,11 @@
             <objects>
                 <viewController storyboardIdentifier="aHomeViewController" id="iJb-Lv-YQY" customClass="HomeViewController" customModule="UsersApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="S3O-Hf-Pfo">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="hcl-0o-sJf">
-                                <rect key="frame" x="0.0" y="102" width="414" height="706"/>
+                                <rect key="frame" x="0.0" y="134" width="414" height="728"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="aUserTableViewCell" rowHeight="100" id="7tW-hy-Eh1" customClass="UserTableViewCell" customModule="UsersApp" customModuleProvider="target">
@@ -214,7 +213,7 @@
                                 </connections>
                             </tableView>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="xap-IO-Neb">
-                                <rect key="frame" x="10" y="66" width="394" height="32"/>
+                                <rect key="frame" x="10" y="98" width="394" height="32"/>
                                 <segments>
                                     <segment title="Male"/>
                                     <segment title="Female"/>
@@ -239,7 +238,7 @@
                     <navigationItem key="navigationItem" title="Home" id="gQT-hw-LH3">
                         <barButtonItem key="rightBarButtonItem" title="Profile" id="1H0-pE-Yag">
                             <connections>
-                                <segue destination="BYZ-38-t0r" kind="show" id="hpw-Z0-1Ca"/>
+                                <action selector="profileBarButtonAction:" destination="iJb-Lv-YQY" id="vGX-Mq-8hU"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -272,10 +271,6 @@
             <point key="canvasLocation" x="1047.8260869565217" y="71.651785714285708"/>
         </scene>
     </scenes>
-    <inferredMetricsTieBreakers>
-        <segue reference="C6J-dz-JTn"/>
-        <segue reference="hpw-Z0-1Ca"/>
-    </inferredMetricsTieBreakers>
     <resources>
         <image name="hand.thumbsup" catalog="system" width="128" height="128"/>
         <image name="hand.thumbsup.fill" catalog="system" width="128" height="121"/>
