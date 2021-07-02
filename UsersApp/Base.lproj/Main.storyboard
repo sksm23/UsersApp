@@ -8,7 +8,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Wel Come-->
+        <!--Profile-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController storyboardIdentifier="aProfileViewController" id="BYZ-38-t0r" customClass="ProfileViewController" customModule="UsersApp" customModuleProvider="target" sceneMemberID="viewController">
@@ -111,7 +111,7 @@
                             <constraint firstItem="plg-8o-Cff" firstAttribute="trailing" secondItem="kzR-pA-hUb" secondAttribute="trailing" id="zql-mx-Ird"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Wel Come" id="KIO-bc-rn1"/>
+                    <navigationItem key="navigationItem" title="Profile" id="KIO-bc-rn1"/>
                     <connections>
                         <outlet property="ageTextField" destination="plg-8o-Cff" id="rdR-VY-MWI"/>
                         <outlet property="genderTextField" destination="kzR-pA-hUb" id="0th-cA-lag"/>

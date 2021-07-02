@@ -16,7 +16,7 @@ class HomeViewModel {
     var displayUserList: [UserDetails] = []
     var likedUserList: [UserDetails] = []
     let coreDataManager = CoreDataManager()
-
+    
     func segregateUsersWith(index: Int) {
         getLikedProfileList()
         if index == 0 { // first segment index
@@ -25,13 +25,13 @@ class HomeViewModel {
             displayUserList = usersList.value.filter { $0.gender == "female" }
         }
     }
-
+    
     func userDetailsAt(index: Int) -> (UserDetails, Bool) {
         let user = displayUserList[index]
         let isLiked = likedUserList.filter({ $0._id == user._id }).count > 0
         return (user, isLiked)
     }
-
+    
     // Core data
     func updateLikedProfile(user: UserDetails, like: Bool) {
         coreDataManager.saveLikedUserData(userData: user, isLike: like)
@@ -45,7 +45,7 @@ class HomeViewModel {
             }
         }
     }
-
+    
     // Api
     func fetchUserList() {
         homeModel.fetchUserList { [weak self] users, error in

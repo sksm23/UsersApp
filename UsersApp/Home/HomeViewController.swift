@@ -8,22 +8,22 @@
 import UIKit
 
 class HomeViewController: UIViewController {
-
+    
     //MARK: - IBOutlets
     @IBOutlet weak var tableView: UITableView!
-
+    
     private let viewModel = HomeViewModel()
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         viewModel.fetchUserList()
         viewModel.getLikedProfileList()
         bindViewModel()
     }
-
+    
     private func prepareUI() {
     }
-
+    
     //MARK: - Bind
     private func bindViewModel() {
         _ = viewModel.usersList.asObservable().subscribe { [weak self] userDetails in
@@ -33,7 +33,7 @@ class HomeViewController: UIViewController {
             }
         }
     }
-
+    
     //MARK: - IBActions
     @IBAction func segmentedControlAction(_ sender: UISegmentedControl) {
         viewModel.segregateUsersWith(index: sender.selectedSegmentIndex)
@@ -43,11 +43,11 @@ class HomeViewController: UIViewController {
 
 // MARK: - UITableViewDataSource
 extension HomeViewController: UITableViewDataSource {
-
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return viewModel.displayUserList.count
     }
-
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "aUserTableViewCell", for: indexPath) as? UserTableViewCell else {
             return UITableViewCell()

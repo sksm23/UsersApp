@@ -8,7 +8,7 @@
 import Foundation
 
 class HomeModel {
-
+    
     let networkManager = NetworkManager()
     let urlString = "http://www.json-generator.com/api/json/get/ceiNKFwyaa?indent=2"
     
@@ -28,7 +28,7 @@ class HomeModel {
             }
         }
     }
-
+    
     func fetchUserImage(imageUrl: String ,completionHandler: @escaping (Data?, Error?) -> Void) {
         networkManager.apiRequestWith(urlString: imageUrl) { data, response, error in
             if let imageData = data {

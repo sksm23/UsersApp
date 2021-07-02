@@ -8,7 +8,7 @@
 import UIKit
 
 class ProfileViewController: UIViewController {
-
+    
     //MARK: - IBOutlets
     @IBOutlet weak var profileImageView: UIImageView!
     @IBOutlet weak var userNameTextField: UITextField!
@@ -19,7 +19,7 @@ class ProfileViewController: UIViewController {
     //
     private let viewModel = ProfileViewModel()
     var imagePicker: ImagePicker!
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -27,7 +27,7 @@ class ProfileViewController: UIViewController {
         bindViewModel()
         viewModel.retriveUserDetails()
     }
-
+    
     private func prepareUI() {
         profileImageView.layer.cornerRadius = profileImageView.frame.width * 0.5
         profileImageView.layer.masksToBounds = true
@@ -35,7 +35,7 @@ class ProfileViewController: UIViewController {
         // ImagePicker
         imagePicker = ImagePicker(presentationController: self, delegate: self)
     }
-
+    
     private func updateUserDetails(userDetails: UserDetails) {
         userNameTextField.text = userDetails.name
         ageTextField.text = "\(userDetails.age)"
@@ -44,7 +44,7 @@ class ProfileViewController: UIViewController {
             profileImageView.image = UIImage(data: data)
         }
     }
-
+    
     //MARK: - Bind
     private func bindViewModel() {
         _ = viewModel.currentUser.asObservable().subscribe { [weak self] userDetails in
@@ -53,7 +53,7 @@ class ProfileViewController: UIViewController {
             }
         }
     }
-
+    
     //MARK: - IBActions
     @IBAction func saveButtonAction(_ sender: UIButton) {
         viewModel.userDetails.name = userNameTextField.text ?? ""
@@ -62,11 +62,11 @@ class ProfileViewController: UIViewController {
         //viewModel.userDetails.picture = profileImageView.text
         viewModel.saveUserDetails()
     }
-
+    
     @IBAction func pickProfilePhotoButtonAction(_ sender: UIButton) {
         imagePicker.present(from: sender)
     }
-
+    
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         currentTextField.resignFirstResponder()
     }
@@ -74,11 +74,11 @@ class ProfileViewController: UIViewController {
 
 //MARK: - UITextFieldDelegate
 extension ProfileViewController: UITextFieldDelegate {
-
+    
     func textFieldDidBeginEditing(_ textField: UITextField) {
         currentTextField = textField
     }
-
+    
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
     }
@@ -86,7 +86,7 @@ extension ProfileViewController: UITextFieldDelegate {
 
 //MARK: - ImagePickerDelegate
 extension ProfileViewController: ImagePickerDelegate {
-
+    
     func didSelect(image: UIImage?) {
         profileImageView.image = image
     }

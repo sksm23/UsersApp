@@ -75,7 +75,7 @@ extension CoreDataManager {
             }
         }
     }
-
+    
     func retrieveLikedUserList(completionHandler: @escaping (([UserDetails]?) -> Void)) {
         let persistentContainer = appDelegate.persistentContainer
         persistentContainer.performBackgroundTask { backgroundContext in
@@ -99,7 +99,7 @@ extension CoreDataManager {
             }
         }
     }
-
+    
     func deleteLikedUserData(userData: UserDetails) {
         let viewContext = appDelegate.persistentContainer.viewContext
         let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "User")
